@@ -1,0 +1,59 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Header styles */
+nav {
+  background-color: #007BFF;
+  padding: 1em;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+}
+#welcomeBanner {
+  background-color: lightblue;
+  text-align: center;
+  padding: 1em;
+  margin: 1em 0;
+}
+/* Gallery */
+.gallery {
+  width: 150px;
+  border: 2px solid gray;
+  margin: 10px;
+}
+/* Events section */
+.eventCard {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: #f9f9f9;
+}
+/* Form styles */
+form {
+  padding: 1em;
+  background-color: #eee;
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+form input, form select, form textarea, form button {
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery {
+    width: 100px;
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <!-- Welcome Banner -->
+  <div id="welcomeBanner">Welcome to the Local Community Event Portal!</div>
+  <span style="color:red; font-weight:bold;">Special Offer: Free Entry Today!</span>
+  <!-- Image Gallery -->
+  <section>
+    <h2>Past Event Gallery</h2>
+    <table>
+      <tr>
+        <td><img src="C:\Users\gudii\OneDrive\Desktop\MODULE1\images\event1.png" alt="Music Fest" class="gallery"></td>
+        <td><img src="C:\Users\gudii\OneDrive\Desktop\MODULE1\images\event2.png" alt="Food Carnival" class="gallery"></td>
+        <td><img src="C:\Users\gudii\OneDrive\Desktop\MODULE1\images\event3.png" alt="Tech Meetup" class="gallery"></td>
+      </tr>
+    </table>
+  </section>
+  <!-- Event List -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div id="eventList"></div>
+  </section>
+  <!-- Registration Form -->
+  <section id="register">
+    <h2>Register for an Event</h2>
+    <form id="regForm">
+      <input type="text" name="name" placeholder="Name" required autofocus>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="date" name="date" required>
+      <select name="eventType" required>
+        <option value="music">Music</option>
+        <option value="tech">Tech</option>
+      </select>
+      <textarea name="message" placeholder="Your message"></textarea>
+      <button type="submit">Register</button>
+      <output id="formOutput"></output>
+    </form>
+  </section>
+  <!-- Video Invite -->
+  <section>
+    <h2>Watch Our Event Promo</h2>
+    <video id="eventVideo" controls width="300">
+      <source src="C:\Users\gudii\OneDrive\Desktop\MODULE1\images\event_promo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p id="videoStatus"></p>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Community Council</p>
+  </footer>
+</body>
+</html>
