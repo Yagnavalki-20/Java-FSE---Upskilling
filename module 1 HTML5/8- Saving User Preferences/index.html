@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #eef2f3;
+    }
+
+    label, select, button {
+      display: block;
+      margin: 15px 0;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-style: italic;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Select Your Preferred Event Type</h2>
+  
+  <label for="eventType">Event Type:</label>
+  <select id="eventType">
+    <option value="">--Choose an event--</option>
+    <option value="Music">Music</option>
+    <option value="Art">Art</option>
+    <option value="Sports">Sports</option>
+    <option value="Tech">Tech</option>
+  </select>
+
+  <button onclick="savePreference()">Save Preference</button>
+  <button onclick="clearPreferences()">Clear Preferences</button>
+
+  <p id="status"></p>
+
+  <script>
+    const selectElement = document.getElementById("eventType");
+    const status = document.getElementById("status");
+
+    // On page load, set preferred event if stored
+    window.onload = function() {
+      const savedPreference = localStorage.getItem("preferredEvent");
+      if (savedPreference) {
+        selectElement.value = savedPreference;
+        status.textContent = "Your saved event preference has been loaded.";
+      }
+    };
+
+    // Save to localStorage when user selects and clicks save
+    function savePreference() {
+      const selectedEvent = selectElement.value;
+      if (selectedEvent) {
+        localStorage.setItem("preferredEvent", selectedEvent);
+        status.textContent = "Preference saved!";
+      } else {
+        status.textContent = "Please select an event to save.";
+      }
+    }
+
+    // Clear localStorage and sessionStorage
+    function clearPreferences() {
+      localStorage.clear();
+      sessionStorage.clear();
+      selectElement.value = "";
+      status.textContent = "All preferences cleared.";
+    }
+  </script>
+
+</body>
+</html>

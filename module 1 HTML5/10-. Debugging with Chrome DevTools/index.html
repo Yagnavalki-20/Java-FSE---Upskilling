@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevTools Debugging Example</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DevTools Debugging Playground</h2>
+
+  <!-- Element to modify via DevTools -->
+  <div class="box" id="debugBox">Inspect me!</div>
+
+  <button onclick="changeColor()">Click to Change Color</button>
+
+  <!-- Script with console logging and a bug to fix -->
+  <script>
+    console.log("Script loaded.");
+
+    function changeColor() {
+      const box = document.getElementById("debugBox");
+      console.log("Before change:", box.style.backgroundColor);
+
+      // Intentional typo for debugging practice
+      box.style.backgroundColor = "lightgreen";
+
+      console.log("After change:", box.style.backgroundColor);
+    }
+
+    // Simulate a bug: accessing an undefined variable
+    const name = "User";
+    // console.log(greeting + ", " + name); // Uncomment to test Console error
+
+    // Use a breakpoint to inspect value
+    function sum(a, b) {
+      let total = a + b;
+      debugger; // Add a breakpoint manually here
+      return total;
+    }
+
+    sum(5, 3); // Test the breakpoint
+  </script>
+
+</body>
+</html>

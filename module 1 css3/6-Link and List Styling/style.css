@@ -1,0 +1,48 @@
+/* ======================================
+   Link Styling with Pseudo-classes
+   ====================================== */
+a:link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #5a5a5a;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ff5722;
+}
+
+/* ======================================
+   Navigation Menu List Styling
+   ====================================== */
+.nav-menu ul {
+  list-style-type: none; /* Remove default bullets */
+  list-style-position: outside;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  background-color: #e0f7fa;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.nav-menu li {
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* ======================================
+   General List Item Styling
+   ====================================== */
+ul li {
+  padding: 8px;
+  margin: 4px 0;
+}

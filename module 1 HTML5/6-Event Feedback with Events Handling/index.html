@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #eef2f7;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    #eventImage {
+      margin-top: 20px;
+      max-width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    #charCount {
+      font-size: 12px;
+      color: #666;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="feedbackForm">
+    <h2>Event Feedback</h2>
+
+    <!-- Phone number with onblur validation -->
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter 10-digit phone number" onblur="validatePhone()">
+
+    <!-- Dropdown to select event and show fee -->
+    <label for="event">Select Event:</label>
+    <select id="event" onchange="showFee()">
+      <option value="">-- Select --</option>
+      <option value="100">Music Festival</option>
+      <option value="50">Art Workshop</option>
+      <option value="75">Food Fair</option>
+    </select>
+    <p id="feeInfo"></p>
+
+    <!-- Feedback textarea with key count -->
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" rows="4" onkeyup="countChars()"></textarea>
+    <p id="charCount">Characters: 0</p>
+
+    <!-- Image with double-click to enlarge -->
+    <img id="eventImage" src="https://via.placeholder.com/300x150" alt="Event Image" title="Double-click to enlarge" ondblclick="enlargeImage(this)">
+
+    <!-- Submit button -->
+    <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+  </form>
+
+  <script>
+    // Validate phone number on blur
+    function validatePhone() {
+      const phone = document.getElementById("phone").value;
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+      }
+    }
+
+    // Show fee based on dropdown selection
+    function showFee() {
+      const fee = document.getElementById("event").value;
+      const feeInfo = document.getElementById("feeInfo");
+      if (fee) {
+        feeInfo.textContent = `Registration Fee: $${fee}`;
+      } else {
+        feeInfo.textContent = "";
+      }
+    }
+
+    // Count characters in textarea
+    function countChars() {
+      const feedback = document.getElementById("feedback").value;
+      document.getElementById("charCount").textContent = `Characters: ${feedback.length}`;
+    }
+
+    // Enlarge image on double-click
+    function enlargeImage(img) {
+      img.style.transform = img.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+    }
+
+    // Confirmation on submit
+    function submitFeedback() {
+      alert("Thank you for your feedback!");
+    }
+  </script>
+
+</body>
+</html>

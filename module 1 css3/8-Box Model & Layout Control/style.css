@@ -1,0 +1,46 @@
+/* ================================
+   Box Model: .eventCard Spacing
+   ================================ */
+.eventCard {
+  border: 2px solid #4caf50;   /* Green border */
+  padding: 20px;               /* Inner spacing */
+  margin: 30px auto;           /* Outer spacing */
+  max-width: 400px;
+  background-color: #e8f5e9;
+  box-sizing: border-box;      /* Include border and padding in width */
+}
+
+/* ================================
+   Outline on Selected Form Field
+   ================================ */
+.form-field {
+  padding: 8px;
+  width: 90%;
+  max-width: 350px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: outline 0.3s ease;
+}
+
+/* Highlight with outline when 'selected' */
+.form-field.selected {
+  outline: 3px solid #ff9800; /* Orange outline */
+}
+
+/* ================================
+   Visibility: hidden vs display: none
+   ================================ */
+.visibility-demo p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.hidden-visibility {
+  visibility: hidden; /* Element hidden but takes space */
+  background-color: #ffeb3b33; /* Light yellow background to show space */
+}
+
+.display-none {
+  display: none; /* Element hidden and no space taken */
+}

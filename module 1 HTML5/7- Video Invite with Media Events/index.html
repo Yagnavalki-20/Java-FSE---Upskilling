@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Promo Video</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px 0;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
+
+    #statusMessage {
+      color: green;
+      font-weight: bold;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to the Community Event!</h1>
+
+  <!-- Video Section -->
+  <video controls oncanplay="showReadyMessage()">
+    <source src="sample-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <p id="statusMessage"></p>
+
+  <!-- Event Registration Form -->
+  <form id="registrationForm">
+    <h2>Register for the Event</h2>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your message..."></textarea>
+    <button type="submit" onclick="clearUnloadWarning()">Submit</button>
+  </form>
+
+  <script>
+    // Show message when video is ready to play
+    function showReadyMessage() {
+      document.getElementById("statusMessage").textContent = "🎥 Video ready to play!";
+    }
+
+    let formChanged = false;
+
+    // Detect changes in form fields
+    document.getElementById("registrationForm").addEventListener("input", () => {
+      formChanged = true;
+    });
+
+    // Warn user before leaving if form is not submitted
+    window.onbeforeunload = function (e) {
+      if (formChanged) {
+        return "You have unsaved changes. Are you sure you want to leave?";
+      }
+    };
+
+    // Clear the warning on form submission
+    function clearUnloadWarning() {
+      formChanged = false;
+    }
+  </script>
+
+</body>
+</html>

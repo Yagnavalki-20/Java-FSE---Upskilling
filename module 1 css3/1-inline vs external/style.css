@@ -1,0 +1,16 @@
+/* Header styles */
+h1, h2 {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  /* Event card styles */
+  .eventCard {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  

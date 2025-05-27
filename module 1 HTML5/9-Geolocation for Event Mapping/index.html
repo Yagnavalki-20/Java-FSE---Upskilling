@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Nearby Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Event Mapping</h2>
+  <button onclick="findNearbyEvents()">Find Nearby Events</button>
+
+  <div id="output"></div>
+
+  <script>
+    function findNearbyEvents() {
+      const output = document.getElementById("output");
+
+      if (!navigator.geolocation) {
+        output.textContent = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      output.textContent = "Locating...";
+
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 10000,  // 10 seconds
+        maximumAge: 0
+      };
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude.toFixed(6);
+          const longitude = position.coords.longitude.toFixed(6);
+          output.innerHTML = `
+            <strong>Your Coordinates:</strong><br>
+            Latitude: ${latitude}<br>
+            Longitude: ${longitude}
+          `;
+          // You can now use these coordinates to fetch nearby events via API
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              output.textContent = "Permission denied. Please allow location access.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              output.textContent = "Location information is unavailable.";
+              break;
+            case error.TIMEOUT:
+              output.textContent = "Request timed out. Try again.";
+              break;
+            default:
+              output.textContent = "An unknown error occurred.";
+              break;
+          }
+        },
+        options
+      );
+    }
+  </script>
+
+</body>
+</html>

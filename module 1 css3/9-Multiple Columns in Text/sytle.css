@@ -1,0 +1,23 @@
+/* ===============================
+   Multi-column layout for news
+   =============================== */
+
+.news-article {
+  column-count: 2;                 /* Split into two columns */
+  column-gap: 30px;                /* Gap between columns */
+  column-rule: 1px solid gray;    /* Vertical rule between columns */
+  padding: 20px;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #fefefe;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.news-article h2 {
+  column-span: all; /* Make heading span both columns */
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,45 @@
+/* ================================================
+   Typography Styling using Google Fonts and More
+   ================================================ */
+
+/* Use the imported 'Poppins' font globally */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #2c2c2c;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+/* ======================
+   Main Heading Styles
+   ====================== */
+.main-heading h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+/* ======================
+   Event Section Styles
+   ====================== */
+.event-description h2 {
+  font-size: 28px;
+  font-weight: 500;
+  font-style: italic;
+  color: #00796b;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.event-description p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.8;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  color: #333;
+}

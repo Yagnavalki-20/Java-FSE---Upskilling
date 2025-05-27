@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Box Model & Layout Control</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="eventCard">
+    <h3>Community Cleanup</h3>
+    <p>Join us in keeping our neighborhood clean and green.</p>
+  </section>
+
+  <form>
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" class="form-field" /><br /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" id="email" name="email" class="form-field selected" /><br /><br />
+
+    <input type="submit" value="Register" />
+  </form>
+
+  <div class="visibility-demo">
+    <p>This paragraph is visible.</p>
+    <p class="hidden-visibility">This paragraph is hidden with <code>visibility: hidden</code> (takes space but not visible).</p>
+    <p class="display-none">This paragraph is hidden with <code>display: none</code> (no space taken).</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* ============================
+   Table Styling for Events
+   ============================ */
+
+.event-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Table header and cells */
+.event-table th,
+.event-table td {
+  border: 1px solid #cccccc;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Table header background */
+.event-table thead {
+  background-color: #00796b;
+  color: white;
+}
+
+/* Zebra striping for rows */
+.event-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.event-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Optional: Hover effect */
+.event-table tbody tr:hover {
+  background-color: #d0f0ec;
+}
